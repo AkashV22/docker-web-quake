@@ -7,4 +7,4 @@ FROM node:alpine
 WORKDIR /usr/src/app
 COPY --from=web-quake /repo/Server .
 RUN npm install websocket
-CMD [ "node", "WebQDS.js" ]
+ENTRYPOINT [ "node", "WebQDS.js", "-port", "80" ]
